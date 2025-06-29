@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/ApplyForm.module.css";
+import styles from "../styles/Applyform.module.css";
 
 const ApplyForm = ({ heading = "Choose the University", university, onClose, showClose = true }) => {
   const programs = university?.programs?.split(",").map((p) => p.trim()) || [];
