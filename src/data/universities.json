@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Great Lake Institute Of Management (GLIM)",
+    "location": "Chennai, Tamil Nadu",
+    "year": 2004,
+    "type": "Private",
+    "approvals": ["UGC Approved"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "ICFAI University Online",
+    "location": "Jaipur, Rajasthan",
+    "year": 1984,
+    "type": "Private",
+    "approvals": ["UGC Approved", "CFA Validated"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "IIM Ahmedabad",
+    "location": "Ahmedabad",
+    "year": 1961,
+    "type": "Public",
+    "approvals": ["NAAC A+", "UGC", "AICTE"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "Chitkara University Online",
+    "location": "Rajpura",
+    "year": 2000,
+    "type": "Private",
+    "approvals": ["NAAC A+", "UGC", "AICTE Approved"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "Chitkara University Online",
+    "location": "Rajpura",
+    "year": 2000,
+    "type": "Private",
+    "approvals": ["NAAC A+", "UGC", "AICTE Approved"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "Chitkara University Online",
+    "location": "Rajpura",
+    "year": 2000,
+    "type": "Private",
+    "approvals": ["NAAC A+", "UGC", "AICTE Approved"],
+    "logo": "glim",
+    "image": "unImage"
+  },
+  {
+    "name": "Chitkara University Online",
+    "location": "Rajpura",
+    "year": 2000,
+    "type": "Private",
+    "approvals": ["NAAC A+", "UGC", "AICTE Approved"],
+    "logo": "glim",
+    "image": "unImage"
+  }
+]

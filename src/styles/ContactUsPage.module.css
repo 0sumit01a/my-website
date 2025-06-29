@@ -1,0 +1,100 @@
+.contactPage {
+  padding-top: 60px;
+  font-family: Arial, sans-serif;
+  background-color: #fffef3;
+}
+
+.topSection {
+    margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('../assets/contact-page-image.avif'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 5%;
+  min-height: 250px; 
+}
+
+.leftText {
+  max-width: 40%;
+  color: #fff;
+}
+
+.leftText h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.leftText p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.bottomSection {
+  display: flex;
+  background-color: #ffffff;
+  gap: 4rem;
+}
+
+.leftInfo {
+  padding-top: 40px;
+  padding-left: 35px;
+  width: 35%;
+  background-color: #d1dcdc;
+}
+
+.leftInfo h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.leftInfo p, .leftInfo div p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.rightForm {
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 35%;
+  padding-bottom: 20px;
+}
+
+.rightForm h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.rightForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.rightForm input, .rightForm select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.rightForm button {
+  background-color: #f84f1d;
+  color: #fff;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

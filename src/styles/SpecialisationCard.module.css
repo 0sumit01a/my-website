@@ -1,0 +1,87 @@
+.card {
+  position: relative;
+  width: 418px;
+  height: 305px;
+  border: 1px solid #ff5722;
+  border-radius: 8px;
+  background-color: #fff4e6;
+  padding: 35px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffeeaa;
+  color: #333;
+  padding: 2px 8px;
+  font-size: 13px;
+  border-radius: 4px 10px 10px 10px;
+}
+
+.fee {
+  color: #f44336;
+  font-size: 14px;
+  /* padding: 18px; */
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+    
+
+  
+}
+
+.description {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  
+}
+
+.btnContainer {
+  display: flex;
+  gap: 12px;
+  padding-top: 18px;
+}
+
+.btnOutline {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btnFill {
+  padding: 8px 16px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  padding: 1rem;
+  color: red;
+  font-weight: bold;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+

@@ -1,0 +1,69 @@
+.container {
+  background: url('../assets/clgImage1.jpeg') no-repeat center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.infoCard {
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 150px;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 30px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.rightForm {
+  flex: 1;
+  background: #608684;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input,
+form select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  background-color: #1c5350;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.phoneInput {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}

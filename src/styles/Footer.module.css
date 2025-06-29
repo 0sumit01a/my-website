@@ -1,0 +1,120 @@
+.footer {
+  background: #608684;
+  padding: 0rem 8rem;
+  padding-top: 1.9rem;
+  font-family: Arial, sans-serif;
+}
+
+.sectionOne {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #000;
+  display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+.sectiontwo {
+  margin-bottom: 2rem;
+  /* padding-bottom: 1.5rem; */
+  border-bottom: 1px solid #000;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sectionOne  h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.sectionTwo  h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Show exactly 4 columns */
+  gap: 1rem;
+}
+
+.grid a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.grid a:hover {
+  text-decoration: underline;
+}
+
+/* Program Sections */
+.gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.gridContainer > div {
+  flex: 1 1 250px;
+}
+
+.gridContainer h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gridContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gridContainer li {
+  margin-bottom: 0.5rem;
+}
+
+.link, a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #000;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  padding-bottom: 0.5rem;
+}
+
+.footerBottomLeft {
+  color: #333;
+}
+
+.footerBottomRight {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footerBottomRight a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footerBottomRight a:hover {
+  text-decoration: underline;
+}
+
+

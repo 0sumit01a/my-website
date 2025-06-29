@@ -1,0 +1,51 @@
+.secondContainer {
+    width: 100%;
+    background: #1c5350;
+    padding: 30px 20px;
+    margin-top: -13px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .box {
+    max-width: 250px;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .count {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .secondContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .box {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px 0;
+    }
+  }
+  

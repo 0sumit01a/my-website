@@ -1,0 +1,196 @@
+.topcon {
+  width: 100%;
+  background: linear-gradient(2deg, #608684 1.71%, #497572 116.36%);
+  padding-top: 80px; /* Added for header */
+  font-family: "Inter", sans-serif;
+}
+
+.sliderContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sliderWrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 200vw; /* two full-width slides */
+}
+
+.section1,
+.section2 {
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 7px;
+}
+
+.imageBox img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textBox {
+  max-width: 700px;
+}
+
+.heading1 h2 {
+  font-size: 64px;
+  font-weight: 900;
+  background: white;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+.heading2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.online {
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.courses {
+  background: #007b7a;
+  color: white;
+  padding: 5px 10px;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 500;
+  max-width: 600px;
+  line-height: 1.7rem;
+  padding-bottom: 10px;
+}
+
+/* ----------- TABLET ----------- */
+@media (max-width: 1024px) {
+  .heading1 h2 {
+    font-size: 48px;
+  }
+
+  .online,
+  .courses {
+    font-size: 48px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .section1,
+  .section2 {
+    max-width: 90%;
+    justify-content: center;
+  }
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 768px) {
+  .sliderWrapper {
+    height: 50vh;
+  }
+
+  /* SECTION 1 Mobile Layout */
+  .section1 {
+    position: relative;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .section1 .imageBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+  }
+
+  .section1 .imageBox img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .section1 .textBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    text-align: right;
+    max-width: 220px;
+  }
+
+  /* SECTION 2 Mobile Layout */
+  .section2 {
+    position: relative;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .section2 .imageBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+  }
+
+  .section2 .imageBox img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .section2 .textBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    text-align: right;
+    max-width: 220px;
+  }
+
+  /* Text scaling */
+  .heading1 h2 {
+    font-size: 30px;
+  }
+
+  .online,
+  .courses {
+    font-size: 30px;
+  }
+
+  .description {
+    display: none;
+  }
+}
+
+/* ----------- SMALL MOBILE ----------- */
+@media (max-width: 480px) {
+  .heading2 {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .heading1 h2,
+  .online,
+  .courses {
+    text-align: center;
+  }
+}

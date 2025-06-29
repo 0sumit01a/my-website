@@ -1,0 +1,125 @@
+/* 
+
+.loginoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .loginbox {
+    background-color: #608684;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #000;
+  }
+  
+  /* form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+  } */
+  
+  /* .consent {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: left;
+    gap: 0.5rem;
+  }
+  
+  .consent input {
+    margin: -30px;
+  }
+  
+  
+  .submitbtn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1c5350;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .register {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .register span {
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .recaptchabox {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .recaptchabox img {
+    width: 20px;
+  }
+  
+  @media (max-width: 500px) {
+    .loginbox {
+      padding: 1.5rem 1rem;
+    }
+  
+    form input,
+    .submitbtn {
+      font-size: 0.9rem;
+    }
+  
+    .consent {
+      font-size: 0.75rem;
+    }
+  
+    .register {
+      font-size: 0.8rem;
+    }
+  
+    .recaptchabox {
+      font-size: 0.7rem;
+    }
+  }
+    */

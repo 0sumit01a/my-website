@@ -1,0 +1,38 @@
+.navSpacer {
+  height: 60px; 
+  width: 100%;
+}
+.container {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: auto;
+  padding: 4%;
+  background-color: #fdf9ef;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.termsSection {
+  margin-bottom: 2rem;
+}
+
+.termsSection p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.termsSection strong {
+  display: block;
+  font-size: 1.3rem;
+  margin: 1rem 0 0.5rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  list-style-type: none;
+}

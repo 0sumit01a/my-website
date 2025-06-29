@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #608684;
+  padding: 2rem;
+  border-radius: 16px;
+  z-index: 1001;
+  width: 90%;
+  max-width: 450px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+form input,
+form select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  height: 44px; 
+  font-size: 16px;
+  line-height: 1;
+  margin: 8px 0;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 6px;
+  color: black;
+}
+
+.phoneInput {
+  display: flex;
+  gap: 10px;
+}
+
+.phoneInput span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0 12px;
+  border-radius: 6px;
+  height: 44px;
+  font-weight: bold;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+.phoneInput input {
+  flex: 1;
+  height: 44px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.checkboxRow input {
+  margin-top: 4px;
+}
+
+.consent {
+  margin: 0;
+  color: white;
+}
+
+.submitBtn {
+  background: #1c5350;
+  color: white;
+  padding: 10px;
+  height: 44px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}

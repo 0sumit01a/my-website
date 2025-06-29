@@ -1,0 +1,200 @@
+.topUniversityPage {
+  background-color: #e8eded;
+  font-family: 'Inter', sans-serif;
+  color: #000;
+}
+
+.headerSection {
+  padding-top: 100px !important;
+  background: linear-gradient(2deg, #608684 1.71%, #497572 116.36%);
+  display: flex;
+  align-items: center;
+  padding: 40px 40px;
+  position: relative;
+}
+
+.bannerImg {
+  margin-bottom: -30px;
+  width: 450px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 40px;
+}
+
+.headerText h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.headerText h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  color: #2e2e2e;
+}
+
+.headerText span {
+  background: black;
+  color: #fff;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.universitySection {
+  padding: 40px 40px;
+}
+
+.universitySection h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pOfUniversity{
+  margin: 0 !important;
+  margin-bottom: 30px !important;
+}
+
+.universitySection p {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto 5px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding-bottom: 30px;
+  }
+  
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .imageContainer {
+    position: relative;
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .logoContainer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 6px;
+    border-radius: 4px;
+  }
+  
+  .logoContainer img {
+    height: 30px;
+  }
+  
+  .cardTitle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .details {
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    line-height: 2;
+    min-height: 120px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 10px;
+  }
+  
+  .apply {
+    flex: 1;
+    background-color: #1c5350;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .know {
+    flex: 1;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #999;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn{
+    cursor: pointer;
+    padding: 12px;
+    width: 180px;
+    border-radius: 5px;
+    margin: 0 auto;
+    border: 2px solid #007b7a;
+    color: #007b7a;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .apply,
+    .know {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+    text-align: left;
+  }
+
+  .bannerImg {
+    display: none;
+  }
+
+  .headerText h1 {
+    font-size: 32px;
+  }
+
+  .headerText h2 {
+    font-size: 26px;
+  }
+}
+
+
+  
+  

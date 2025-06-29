@@ -1,0 +1,129 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .container {
+    background: #608684;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    position: relative;
+    font-family: "Inter", sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    color: #000;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: left;
+    gap: 0.5rem;
+  }
+  
+  .checkboxLabel input {
+    margin-top: 1.5rem;
+    margin-left: -40px;
+  }
+
+  .checkboxLabel span{
+    margin-left: -50px;
+  }
+  
+  .submitBtn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1c5350;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .loginLink {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #000;
+  }
+  
+  .loginLink span {
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .recaptcha {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .recaptcha img {
+    width: 20px;
+  }
+  
+  .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      padding: 1.5rem 1rem;
+    }
+  
+    form input,
+    .submitBtn {
+      font-size: 0.9rem;
+    }
+  
+    .checkboxLabel {
+      font-size: 0.75rem;
+    }
+  
+    .loginLink {
+      font-size: 0.8rem;
+    }
+  
+    .recaptcha {
+      font-size: 0.7rem;
+    }
+  }
+  

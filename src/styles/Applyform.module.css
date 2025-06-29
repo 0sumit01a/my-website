@@ -1,0 +1,113 @@
+.overlayOne {
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.formWrapperOne {
+ 
+position: relative;
+  background-color: #cbb82c;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 100%;
+  width: 340px;
+  height: auto;
+  max-height: 90vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* overflow-y: auto; */
+  position: relative;
+}
+
+.closeBtnOne {
+  position: absolute;
+  top: -3px;
+  right: 16px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.heading {
+  margin-bottom: 8px;
+  font-size: 16px;
+  border-bottom: 1px solid black;
+  padding-bottom: 4px;
+  line-height: 1.2;
+}
+
+.formOne {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1;
+}
+
+.inputOne,
+.selectOne {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: transparent;
+  font-size: 13px;
+  height: 32px;
+  line-height: 1;
+}
+.inputOne{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.phoneWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.countryCode {
+  background-color: #eee;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.checkboxWrapperOne {
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.checkboxWrapperOne input {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.submitBtn {
+  background-color: #ff5e3a;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}

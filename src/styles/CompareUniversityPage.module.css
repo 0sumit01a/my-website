@@ -1,0 +1,159 @@
+.comparePage {
+  background-color: #386e6b;
+  padding: 7rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.card select {
+  width: 100%;
+  height: 48px; /* increased height */
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000 !important;
+  padding: 0 0.75rem; /* only horizontal padding */
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.card select option {
+  color: #000;
+  background-color: #fff;
+}
+
+.card select option:disabled {
+  color: #888;
+}
+
+.buttonContainer {
+  margin: 2rem 0;
+}
+
+.compareBtn {
+  background-color: #004d4d;
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.compareBtn:hover {
+  background-color: #003a3a;
+}
+
+.note {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-top: 1.5rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.compareTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  min-width: 600px;
+}
+
+.compareTable th,
+.compareTable td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compareTable th {
+  background-color: #f0c02e;
+  color: black;
+  font-weight: bold;
+}
+
+.label {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .compareBtn {
+    width: 100%;
+  }
+
+  .compareTable th,
+  .compareTable td {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
