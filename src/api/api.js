@@ -22,22 +22,50 @@ const fetchWithHeaders = async (endpoint) => {
   }
 };
 
+// ✅ Get all universities
 export const getUniversities = async () => {
   const data = await fetchWithHeaders("get_university.php");
   return data?.data || [];
 };
 
-export const getSliders = async () => {
-  const data = await fetchWithHeaders("get_sliders.php");
-  return data?.data || [];
-};
-
+// ✅ Get all categories (programs)
 export const getCategories = async () => {
   const data = await fetchWithHeaders("get_category.php");
   return data?.data || [];
 };
 
+// ✅ Get only Under Graduate programs
+export const getUGPrograms = async () => {
+  const data = await getCategories();
+  return data.filter((cat) =>
+    cat.catg_type?.toLowerCase().includes("under graduate") || cat.catg_type?.toLowerCase() === "ug"
+  );
+};
+
+// ✅ Get only Post Graduate programs
+export const getPGPrograms = async () => {
+  const data = await getCategories();
+  return data.filter((cat) =>
+    cat.catg_type?.toLowerCase().includes("post graduate")
+  );
+};
+
+// ✅ Get only MBA-related programs
+export const getMBAPrograms = async () => {
+  const data = await getCategories();
+  return data.filter((cat) =>
+    cat.catg_name?.toLowerCase().includes("mba")
+  );
+};
+
+// ✅ Example: get university-category mapping (optional)
 export const getUniversityMap = async () => {
   const data = await fetchWithHeaders("get_university_map.php");
+  return data?.data || [];
+};
+
+// ✅ Example: slider API (if used on homepage)
+export const getSliders = async () => {
+  const data = await fetchWithHeaders("get_sliders.php");
   return data?.data || [];
 };

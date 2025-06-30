@@ -1,42 +1,21 @@
 .footer {
-  background: #608684;
-  padding: 0rem 8rem;
-  padding-top: 1.9rem;
+  background: #557E7C;
+  padding: 2rem 4rem;
   font-family: Arial, sans-serif;
 }
 
-.sectionOne {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #000;
-  display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-}
-.sectiontwo {
-  margin-bottom: 2rem;
-  /* padding-bottom: 1.5rem; */
-  border-bottom: 1px solid #000;
-  display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.sectionOne  h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-.sectionTwo  h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
+/* === Grid layout for universities === */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Show exactly 4 columns */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .grid a {
@@ -49,57 +28,46 @@
   text-decoration: underline;
 }
 
-/* Program Sections */
-.gridContainer {
-  display: flex;
-  flex-wrap: wrap;
+/* === Program Row (PG, UG, MBA in one row) === */
+.programRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  padding-top: 2rem;
 }
 
-.gridContainer > div {
-  flex: 1 1 250px;
-}
-
-.gridContainer h3 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.gridContainer ul {
+.programRow ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.gridContainer li {
+.programRow li {
   margin-bottom: 0.5rem;
 }
 
-.link, a {
+.programRow a {
   text-decoration: none;
   color: #000;
   font-size: 0.9rem;
 }
 
-a:hover {
+.programRow a:hover {
   text-decoration: underline;
 }
 
+/* === Footer Bottom === */
 .footerBottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   border-top: 1px solid #000;
   padding-top: 1rem;
   margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-size: 0.85rem;
-  padding-bottom: 0.5rem;
 }
 
 .footerBottomLeft {
-  color: #333;
+  color: #000;
 }
 
 .footerBottomRight {
@@ -117,4 +85,89 @@ a:hover {
   text-decoration: underline;
 }
 
+/* === Responsive Switch === */
+.desktopOnly {
+  display: block;
+}
 
+.mobileOnly {
+  display: none;
+}
+
+/* === Collapsible Boxes for Mobile === */
+/* === Mobile Collapsible Layout Fix === */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 0.2rem;
+  }
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  .collapsibleBox {
+    background-color: #557E7C;
+    border: 1px solid #000;
+    margin: 1rem auto;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 90%;
+    padding: 0%;
+  }
+
+  .collapsibleHeader {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .contentBox {
+    padding: 1rem;
+    background-color: #557E7C;
+  }
+
+  .contentBox ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .contentBox li {
+    margin-bottom: 0.5rem;
+  }
+
+  .contentBox a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+  }
+
+  .contentBox a:hover {
+    text-decoration: underline;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footerBottomRight {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
