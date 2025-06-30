@@ -10,19 +10,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const handleLoginClick = () => {
-    setShowLogin(true);
-    setShowRegister(false);
-  };
 
-  const handleCloseLogin = () => setShowLogin(false);
-  const handleCloseRegister = () => setShowRegister(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +29,9 @@ const Header = () => {
   return (
     <>
       <section className={`${style.navBar} ${scrolled ? style.shrink : ''}`}>
-        <img src={logo} alt="Logo" className={style.headerlogo} />
+        <Link to="/">
+  <img src={logo} alt="Logo" className={style.headerlogo} />
+</Link>
         
         <div className={style.hamburger} onClick={toggleMenu}>
           {menuOpen ? <IoMdClose size={30} /> : <GiHamburgerMenu size={30} />}
@@ -51,11 +45,11 @@ const Header = () => {
             Powered Course Finder
           </div>
           <Link to="/contact" className={style.contact}>Contact us</Link>
-          <div className={style.login} onClick={handleLoginClick}>Login</div>
+          {/* <div className={style.login} onClick={handleLoginClick}>Login</div> */}
         </div>
       </section>
 
-      {showLogin && (
+      {/* {showLogin && (
         <Login
           onClose={handleCloseLogin}
           onSwitch={() => {
@@ -73,7 +67,7 @@ const Header = () => {
             setShowLogin(true);
           }}
         />
-      )}
+      )} */}
     </>
   );
 };

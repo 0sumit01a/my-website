@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../styles/ForthContainer.module.css";
 import { getCategories } from "../api/api";
+import { generateSlug } from "../utils/slug";
 
 const ForthContainer = () => {
   const [active, setActive] = useState("post");
@@ -13,12 +14,9 @@ const ForthContainer = () => {
 
   const filtered = cats.filter((c) =>
     active === "post"
-      ? c.catg_type === "Post Graduate"
-      : c.catg_type === "Under Graduate"
+      ? c.catg_type?.toLowerCase() === "post graduate"
+      : c.catg_type?.toLowerCase() === "under graduate" || c.catg_type?.toLowerCase() === "ug"
   );
-
-  const slugify = (str) =>
-    str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
   return (
     <section className={style.forthContainer}>
@@ -44,7 +42,7 @@ const ForthContainer = () => {
         {filtered.map((cat) => (
           <Link
             key={cat.catg_id}
-            to={`/${active === "post" ? "post-graduate" : "under-graduate"}/${slugify(cat.catg_name)}`}
+            to={`/${active === "post" ? "post-graduate" : "under-graduate"}/${generateSlug(cat.catg_name, cat.catg_id)}`}
             className={style.innerCourseContainer}
           >
             <span className={style.durationTag}>{cat.catg_type}</span>

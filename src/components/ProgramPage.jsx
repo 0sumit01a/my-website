@@ -2,19 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../styles/ProgramPage.module.css";
 import { getCategories, getUniversities, getUniversityMap } from "../api/api";
+import { generateSlug } from "../utils/slug";
 import SpecialisationCard from "../reuse/SpecialisationCard";
 
-// 🔥 Updated slug function
-function toSlug(str) {
-  return str
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "") // remove special chars except spaces and hyphens
-    .trim()
-    .replace(/\s+/g, "-"); // convert spaces to dash
-}
-
 const ProgramPage = () => {
-  const { category, programId } = useParams();
+  const { programId } = useParams();
   const [categoryData, setCategoryData] = useState(null);
   const [universities, setUniversities] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,25 +20,28 @@ const ProgramPage = () => {
           getUniversityMap(),
         ]);
 
-        // 💡 Find correct category by matching slug
-        const matchedCat = cats.find(c => toSlug(c.catg_name) === programId);
+        // Find category by ID extracted from slug
+        const idFromSlug = programId.split("-").pop();
+        const matchedCat = cats.find(c => c.catg_id === idFromSlug);
+
         if (!matchedCat) {
           setLoading(false);
           return;
         }
+
         setCategoryData(matchedCat);
 
-        // Find universities linked to this category
+        // Find universities mapped to this category
         const uniIds = maps
           .filter(m => m.catg_id === matchedCat.catg_id)
           .map(m => m.u_id);
 
         const matchedUnivs = univs.filter(u => uniIds.includes(u.u_id));
-        setUniversities(matchedUnivs);
 
+        setUniversities(matchedUnivs);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching:", error);
+        console.error("Error fetching data:", error);
         setLoading(false);
       }
     };
@@ -61,7 +56,7 @@ const ProgramPage = () => {
     <main>
       <section className={styles.programWrapper}>
         <div className={styles.left}>
-          <h4>{category === "post-graduate" ? "Post Graduate Program" : "Under Graduate Program"}</h4>
+          <h4>{categoryData.catg_type || "Program"}</h4>
           <h1>{categoryData.catg_name}</h1>
           <div className={styles.stats}>
             <span><b>{universities.length}</b> Universities</span>
@@ -91,7 +86,7 @@ const ProgramPage = () => {
               <select className={styles.selectIt} required>
                 <option value="">Select university</option>
                 {universities.map(u => (
-                  <option key={u.u_id}>{u.name}</option>
+                  <option key={u.u_id}>{u.u_name}</option>
                 ))}
               </select>
               <select className={styles.selectIt} required>
@@ -117,8 +112,8 @@ const ProgramPage = () => {
               <SpecialisationCard
                 key={u.u_id}
                 data={{
-                  title: u.name,
-                  description: u.about,
+                  title: u.u_name,
+                  description: u.u_about,
                   universities: 1,
                   fee: u.fee || "See details",
                 }}

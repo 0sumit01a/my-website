@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import ScrollToTop from "./scrollTop/ScrollToTop.jsx";
 import Header from './components/Header.jsx';
 import MainConatiner from "./components/MainConatiner.jsx";
 import ComparePage from "./components/CompareUniversityPage.jsx";
@@ -18,12 +18,14 @@ import Footer from "./components/Footer.jsx";
 import TermConditions from "./components/TermConditions.jsx";
 import PrivacyPolicy from "./components/PricacyPolicy.jsx";
 import Blog from "./components/Blog.jsx";
+import Disclamer from "./components/Disclamer.jsx";
 
 
 export default class App extends Component {
   render() {
     return (
       <Router>
+           <ScrollToTop />
         <div className="app-layout">
           <Header />
           <main className="content-area">
@@ -40,7 +42,8 @@ export default class App extends Component {
               <Route path="/terms" element={<TermConditions />} />         
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/blog" element={<Blog />} />
-                   <Route path="/:category/:programId" element={<ProgramPage />} />
+              <Route path ="/disclaimer" element={<Disclamer />} />
+                   <Route path="/:category/:programId" element={<ProgramPage />} /> 
             </Routes>
           </main>
           <TwelveContainer />

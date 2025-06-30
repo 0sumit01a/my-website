@@ -26,6 +26,7 @@ export default function AllUniversities() {
 
   return (
     <main>
+      <div className={styles.navSpacer}></div>
       <div className={styles.topDiv}>
         <div className={styles.topLeft}>
           <img

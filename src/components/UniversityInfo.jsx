@@ -1,17 +1,35 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../api/DataContext";
+import { getUniversityMap, getCategories } from "../api/api";
 import styles from "../styles/UniversityInfo.module.css";
 
 const UniversityInfo = () => {
   const { slug } = useParams();
   const { universities } = useContext(DataContext);
 
-  // Extract ID from slug (last part after last dash)
-  const id = slug.split("-").pop();
+  const [programs, setPrograms] = useState([]);
 
-  // Find university using backend data
+  const id = slug.split("-").pop();
   const university = universities.find((u) => u.u_id === id);
+
+  useEffect(() => {
+    const fetchPrograms = async () => {
+      if (!university) return;
+
+      const maps = await getUniversityMap();
+      const categories = await getCategories();
+
+      const mappedPrograms = maps
+        .filter((m) => m.u_id === university.u_id)
+        .map((m) => categories.find((cat) => cat.catg_id === m.catg_id))
+        .filter(Boolean);
+
+      setPrograms(mappedPrograms);
+    };
+
+    fetchPrograms();
+  }, [university]);
 
   useEffect(() => {
     const navItems = document.querySelectorAll(`.${styles.navItem}`);
@@ -64,7 +82,7 @@ const UniversityInfo = () => {
       >
         <div className={styles.tLeft}>
           <div className={styles.card}>
-            <div className={styles.rating}>⭐ 4.5</div>
+            <div className={styles.rating}> ⭐ {university.u_ranking } &nbsp;&nbsp; 4.5</div>
             <div className={styles.cardTop}>
               {university.u_logo && (
                 <img
@@ -100,12 +118,19 @@ const UniversityInfo = () => {
                 <option>August 2025</option>
               </select>
 
-              <select required className={styles.select}>
-                <option>{university.u_name || "Select university"}</option>
-              </select>
+              <input
+                type="text"
+                value={university.u_name}
+                readOnly
+                disabled
+                className={styles.input}
+              />
 
               <select required className={styles.select}>
-                <option>Select program</option>
+                <option value="">Select program</option>
+                {programs.map((prog) => (
+                  <option key={prog.catg_id}>{prog.catg_name}</option>
+                ))}
               </select>
 
               <div className={styles.checkboxWrapper}>
@@ -139,7 +164,9 @@ const UniversityInfo = () => {
           <div className={styles.navItem} data-target="related">Related Universities</div>
           <div className={styles.navItem} data-target="faqs">FAQs</div>
 
-          <button className={styles.applyBtn}>Apply Now</button>
+          <button className={styles.applyBtn} onClick={() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}>Apply Now</button>
         </div>
 
         <div className={styles.content}>

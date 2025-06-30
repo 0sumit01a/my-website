@@ -1,18 +1,30 @@
 .cardGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
-  padding-bottom: 30px;
+  padding: 0 5vw 40px 5vw;
+  box-sizing: border-box;
 }
 
+/* Each card will take up 23% width on large screens, 31% on tablets, 48% on mobile, 100% on small mobile */
 .card {
   background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 23%;
+  min-width: 260px;
+  max-width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .imageContainer {
@@ -26,8 +38,8 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .logoContainer {
@@ -41,8 +53,10 @@
 }
 
 .logoContainer img {
-  height: 30px;
+  height: 32px;
   width: auto;
+  max-width: 60px;
+  object-fit: contain;
 }
 
 .cardTitle {
@@ -55,8 +69,11 @@
   padding: 10px;
   font-size: 14px;
   font-weight: 600;
-  z-index: 1;
   box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1;
 }
 
 .details {
@@ -69,6 +86,7 @@
 
 .buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 16px;
   gap: 10px;
@@ -87,7 +105,7 @@
 
 .know {
   flex: 1;
-  background-color: #fff;
+  background-color: white;
   color: #333;
   border: 1px solid #999;
   padding: 10px;
@@ -96,19 +114,51 @@
   cursor: pointer;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .cardGrid {
-    grid-template-columns: repeat(2, 1fr);
+/* ========== Responsive Breakpoints ========== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .card {
+    width: 31%;
   }
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .card {
+    width: 48%;
+  }
+}
+
+/* Small mobile */
 @media (max-width: 480px) {
-  .cardGrid {
-    grid-template-columns: 1fr;
+  .card {
+    width: 100%;
   }
 
   .imageContainer img {
     aspect-ratio: 4 / 3;
+  }
+
+  .cardTitle {
+    font-size: 13px;
+  }
+
+  .logoContainer img {
+    height: 26px;
+  }
+
+  .details {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .apply,
+  .know {
+    width: 100%;
   }
 }

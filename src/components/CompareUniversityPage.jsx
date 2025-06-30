@@ -3,6 +3,8 @@ import style from "../styles/CompareUniversityPage.module.css";
 import defaultLogo from "../assets/university logo.png";
 import courselogo from "../assets/course logo.jpeg";
 import { getCategories, getUniversities, getUniversityMap } from "../api/api";
+import { generateSlug } from "../utils/slug";
+import { Link } from "react-router-dom";
 
 const CompareUniversityPage = () => {
   const [categories, setCategories] = useState([]);
@@ -90,7 +92,9 @@ const CompareUniversityPage = () => {
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
-            <option value="" disabled>Select Category</option>
+            <option value="" disabled>
+              Select Category
+            </option>
             {categories.map((cat) => (
               <option key={cat.catg_id} value={cat.catg_id}>
                 {cat.catg_name}
@@ -114,7 +118,9 @@ const CompareUniversityPage = () => {
               onChange={(e) => handleUniversityChange(i, e.target.value)}
               disabled={!selectedCategory}
             >
-              <option value="" disabled>Select University</option>
+              <option value="" disabled>
+                Select University
+              </option>
               {filteredUniversities.map((uni) => (
                 <option key={uni.u_id} value={uni.u_id}>
                   {uni.u_name}
@@ -157,15 +163,21 @@ const CompareUniversityPage = () => {
               {renderSpecializationRow()}
               <tr>
                 <td className={style.label}>More</td>
-                {selectedUniversities.map((id, i) => (
-                  <td key={i}>
-                    {id && (
-                      <a href={`/universities/${id}`} target="_blank" rel="noopener noreferrer">
-                        Know More
-                      </a>
-                    )}
-                  </td>
-                ))}
+                {selectedUniversities.map((id, i) => {
+                  const uni = universities.find((u) => u.u_id === id);
+                  return (
+                    <td key={i}>
+                      {id && uni && (
+                        <Link
+                          to={`/universities/${generateSlug(uni.u_name, uni.u_id)}`}
+                          className={style.know}
+                        >
+                          Know More
+                        </Link>
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
             </tbody>
           </table>

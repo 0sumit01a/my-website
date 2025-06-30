@@ -15,9 +15,9 @@
 .formWrapperOne {
  
 position: relative;
-  background-color: #cbb82c;
+  background-color: #84a7a5;
   border-radius: 16px;
-  padding: 16px;
+  padding: 16px 26px; 
   max-width: 100%;
   width: 340px;
   height: auto;
@@ -29,14 +29,17 @@ position: relative;
 
 .closeBtnOne {
   position: absolute;
-  top: -3px;
-  right: 16px;
-  font-size: 20px;
+  top: -9px;
+  right: 0px;
+  font-size: 34px;
   background: none;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 100;
+  z-index: 10000;
 }
+
+
 
 .heading {
   margin-bottom: 8px;
@@ -75,7 +78,7 @@ position: relative;
 }
 
 .countryCode {
-  background-color: #eee;
+  background-color: #84a7a5;
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -110,4 +113,12 @@ position: relative;
   font-size: 14px;
   font-weight: bold;
   margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .closeBtnOne {
+    position: absolute;
+    font-size: 30px;
+    text-align: right;
+  }
 }

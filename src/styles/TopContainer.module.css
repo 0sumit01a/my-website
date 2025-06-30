@@ -1,7 +1,7 @@
 .topcon {
   width: 100%;
   background: linear-gradient(2deg, #608684 1.71%, #497572 116.36%);
-  padding-top: 80px; /* Added for header */
+  padding-top: 80px; 
   font-family: "Inter", sans-serif;
 }
 
@@ -13,7 +13,7 @@
 .sliderWrapper {
   display: flex;
   transition: transform 0.8s ease-in-out;
-  width: 200vw; /* two full-width slides */
+  width: 200vw; 
 }
 
 .section1,
@@ -23,11 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  max-width: 1400px;
   margin: auto;
   padding-bottom: 7px;
 }
-
 .imageBox img {
   max-width: 100%;
   height: auto;
@@ -76,7 +74,6 @@
   padding-bottom: 10px;
 }
 
-/* ----------- TABLET ----------- */
 @media (max-width: 1024px) {
   .heading1 h2 {
     font-size: 48px;
@@ -98,13 +95,11 @@
   }
 }
 
-/* ----------- MOBILE ----------- */
 @media (max-width: 768px) {
   .sliderWrapper {
     height: 50vh;
   }
 
-  /* SECTION 1 Mobile Layout */
   .section1 {
     position: relative;
     height: 100%;
@@ -134,7 +129,6 @@
     max-width: 220px;
   }
 
-  /* SECTION 2 Mobile Layout */
   .section2 {
     position: relative;
     height: 100%;
@@ -164,7 +158,6 @@
     max-width: 220px;
   }
 
-  /* Text scaling */
   .heading1 h2 {
     font-size: 30px;
   }
@@ -179,7 +172,6 @@
   }
 }
 
-/* ----------- SMALL MOBILE ----------- */
 @media (max-width: 480px) {
   .heading2 {
     flex-direction: column;

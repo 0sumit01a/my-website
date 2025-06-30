@@ -260,3 +260,44 @@
 .section p {
   line-height: 1.6;
 }
+@media (max-width: 1024px) {
+  .top {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tLeft,
+  .tRight {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .card {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .formContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainWrapper {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens */
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .section {
+    scroll-margin-top: 100px;
+  }
+}
