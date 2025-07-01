@@ -71,7 +71,7 @@ h3 {
 /* === Footer Bottom === */
 .footerBottom {
   border-top: 1px solid #000;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   /* margin-top: 2rem; */
   display: flex;
   justify-content: space-between;
@@ -113,7 +113,7 @@ h3 {
 
 .mobileOnly {
   display: none;
-   background: #557E7C;
+   /* background: #557E7C; */
   padding: 2rem 4rem;
   font-family: Arial, sans-serif;
 }
