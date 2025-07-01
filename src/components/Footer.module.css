@@ -10,7 +10,7 @@
 .footerT {
   padding: 2rem 4rem;
   font-family: Arial, sans-serif;
-    background-color: pink;
+   background: #557E7C;
 }
 h3 {
   font-size: 1.1rem;
@@ -106,9 +106,8 @@ h3 {
   display: block;
  
    /* background: #557E7C; */
-  padding: 2rem 4rem;
-  font-family: Arial, sans-serif;
-  padding-bottom: 2rem;
+  /* padding: 2rem 4rem;
+  padding-bottom: 2rem; */
 }
 
 .mobileOnly {
