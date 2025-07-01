@@ -7,6 +7,11 @@
 .footerH{
     background: #557E7C;
 }
+.footerT {
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
+    background-color: pink;
+}
 h3 {
   font-size: 1.1rem;
   font-weight: bold;
@@ -72,7 +77,7 @@ h3 {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 0.85rem;
-   background: #557E7C;
+   /* background: #557E7C; */
   padding: 2rem 4rem;
   font-family: Arial, sans-serif;
 }
@@ -100,8 +105,8 @@ h3 {
 .desktopOnly {
   display: block;
  
-   background: #557E7C;
-  /* padding: 2rem 4rem; */
+   /* background: #557E7C; */
+  padding: 2rem 4rem;
   font-family: Arial, sans-serif;
   padding-bottom: 2rem;
 }
