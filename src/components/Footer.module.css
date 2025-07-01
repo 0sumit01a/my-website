@@ -3,11 +3,7 @@
   padding: 2rem 4rem;
   font-family: Arial, sans-serif;
 } */
-.footerT {
-  background: #557E7C;
-  padding: 2rem 4rem;
-  font-family: Arial, sans-serif;
-}
+
 h3 {
   font-size: 1.1rem;
   font-weight: bold;
@@ -73,6 +69,9 @@ h3 {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 0.85rem;
+   background: #557E7C;
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
 }
 
 .footerBottomLeft {
@@ -97,14 +96,17 @@ h3 {
 /* === Responsive Switch === */
 .desktopOnly {
   display: block;
-  background: #557E7C;
+ 
+   background: #557E7C;
   padding: 2rem 4rem;
   font-family: Arial, sans-serif;
-  
 }
 
 .mobileOnly {
   display: none;
+   background: #557E7C;
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
 }
 
 /* === Collapsible Boxes for Mobile === */
