@@ -30,17 +30,20 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footerH}>
       {/* === Desktop View === */}
       <div className={styles.desktopOnly}>
-        <h3>All Universities</h3>
-        <div className={styles.grid}>
-          {universities.map((uni) => (
-            <Link key={uni.u_id} to={`/university/${uni.u_id}`}>
-              {uni.u_name}
-            </Link>
-          ))}
-        </div>
+
+        <div className={`${styles.universitySection}`}>
+  <h3>All Universities</h3>
+  <div className={styles.grid}>
+    {universities.map((uni) => (
+      <Link key={uni.u_id} to={`/university/${uni.u_id}`}>
+        {uni.u_name}
+      </Link>
+    ))}
+  </div>
+</div>
 
         {/* PG, UG, MBA in one row */}
         <div className={styles.programRow}>
