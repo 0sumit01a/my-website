@@ -67,7 +67,7 @@ h3 {
 .footerBottom {
   border-top: 1px solid #000;
   padding-top: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -103,12 +103,13 @@ h3 {
    background: #557E7C;
   /* padding: 2rem 4rem; */
   font-family: Arial, sans-serif;
+  padding-bottom: 2rem;
 }
 
 .mobileOnly {
   display: none;
    background: #557E7C;
-  /* padding: 2rem 4rem; */
+  padding: 2rem 4rem;
   font-family: Arial, sans-serif;
 }
 
