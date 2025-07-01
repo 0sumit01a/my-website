@@ -30,9 +30,9 @@ const Footer = () => {
   };
 
   return (
-    <div>
+    <>
     <div className={styles.footerH}>
-      {/* === Desktop View === */}
+      <div className={styles.footerT}>
       <div className={styles.desktopOnly}>
 
         <div className={`${styles.universitySection}`}>
@@ -81,8 +81,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+     
       </div>
-
       {/* === Mobile View === */}
       <div className={styles.mobileOnly}>
         {[
@@ -141,7 +141,8 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    </div>
+     </div>
+    </>
   );
 };
 
