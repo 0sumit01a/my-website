@@ -94,6 +94,9 @@ h3 {
 /* === Responsive Switch === */
 .desktopOnly {
   display: block;
+  background: #557E7C;
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
   
 }
 
