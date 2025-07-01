@@ -4,6 +4,9 @@
   font-family: Arial, sans-serif;
 } */
 
+.footerH{
+    background: #557E7C;
+}
 h3 {
   font-size: 1.1rem;
   font-weight: bold;
@@ -98,14 +101,14 @@ h3 {
   display: block;
  
    background: #557E7C;
-  padding: 2rem 4rem;
+  /* padding: 2rem 4rem; */
   font-family: Arial, sans-serif;
 }
 
 .mobileOnly {
   display: none;
    background: #557E7C;
-  padding: 2rem 4rem;
+  /* padding: 2rem 4rem; */
   font-family: Arial, sans-serif;
 }
 

@@ -8,7 +8,9 @@ import {
   getMBAPrograms,
 } from "../api/api";
 
+
 const Footer = () => {
+  
   const [universities, setUniversities] = useState([]);
   const [pgPrograms, setPGPrograms] = useState([]);
   const [ugPrograms, setUGPrograms] = useState([]);
