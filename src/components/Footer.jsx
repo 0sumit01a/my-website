@@ -30,7 +30,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footerH}>
+    <div>
+    <div className={styles.footerH}>
       {/* === Desktop View === */}
       <div className={styles.desktopOnly}>
 
@@ -139,7 +140,8 @@ const Footer = () => {
           <Link to="/terms">Website Terms</Link>
         </div>
       </div>
-    </footer>
+    </div>
+    </div>
   );
 };
 
