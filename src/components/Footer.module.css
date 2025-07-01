@@ -1,0 +1,188 @@
+.footerH {
+  background: #557E7C;
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
+  /* margin: 1rem; */
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* === Grid layout for universities === */
+.grid {
+  display: grid;
+ grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.grid a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.grid a:hover {
+  text-decoration: underline;
+}
+.universitySection {
+  border-bottom: 1px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+/* === Program Row (PG, UG, MBA in one row) === */
+.programRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem; 
+ 
+}
+
+.programRow ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.programRow li {
+  margin-bottom: 0.5rem;
+}
+
+.programRow a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.programRow a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer Bottom === */
+.footerBottom {
+  border-top: 1px solid #000;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.footerBottomLeft {
+  color: #000;
+}
+
+.footerBottomRight {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footerBottomRight a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footerBottomRight a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive Switch === */
+.desktopOnly {
+  display: block;
+  background: #557E7C;
+  padding: 2rem 4rem;
+  font-family: Arial, sans-serif;
+  
+}
+
+.mobileOnly {
+  display: none;
+}
+
+/* === Collapsible Boxes for Mobile === */
+/* === Mobile Collapsible Layout Fix === */
+@media (max-width: 1024px) {
+    .universitySection {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .footer {
+    padding: 0.2rem;
+  }
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  .collapsibleBox {
+    background-color: #557E7C;
+    border: 1px solid #000;
+    margin: 1rem auto;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 90%;
+    padding: 0%;
+  }
+
+  .collapsibleHeader {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .contentBox {
+    padding: 1rem;
+    background-color: #557E7C;
+  }
+
+  .contentBox ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .contentBox li {
+    margin-bottom: 0.5rem;
+  }
+
+  .contentBox a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+  }
+
+  .contentBox a:hover {
+    text-decoration: underline;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footerBottomRight {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

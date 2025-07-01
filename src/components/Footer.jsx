@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/Footer.module.css";
+import styles from "./Footer.module.css"; // Adjust the path as necessary
 import {
   getUniversities,
   getUGPrograms,
