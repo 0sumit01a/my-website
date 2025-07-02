@@ -3,7 +3,7 @@
   padding: 40px 20px;
   font-family: "Inter", sans-serif;
   position: relative;
-  margin-bottom: 60px; /* Prevents overlap with next section */
+  margin-bottom: 40px;
 }
 
 .topSection {
@@ -16,11 +16,12 @@
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: white;
 }
 
 .topSection p {
   font-size: 16px;
-  color: #333;
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
@@ -29,8 +30,10 @@
   flex-wrap: wrap;
   gap: 24px;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
+/* ===== Loan Partners Section ===== */
 .loanPartners {
   flex: 1 1 300px;
 }
@@ -38,6 +41,7 @@
 .loanTitle {
   font-weight: bold;
   margin-bottom: 16px;
+  color: white;
 }
 
 .partnerLogos {
@@ -63,22 +67,30 @@
 .partnerLogos img {
   max-height: 30px;
   max-width: 100%;
+  object-fit: contain;
 }
 
+/* ===== Cards Section ===== */
 .cards {
   flex: 2 1 600px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  align-items: stretch; /* 👈 Ensures equal height */
 }
 
 .card {
   flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
   border-radius: 6px;
   color: #000;
-  height: 100%;
+  box-sizing: border-box;
   line-height: 1.8;
+  min-height: 320px; /* 👈 Force equal height */
+  background-color: #f0f0f0;
 }
 
 .card h3 {
@@ -87,6 +99,11 @@
   font-weight: bold;
 }
 
+.card p {
+  flex-grow: 1; /* 👈 Ensures even vertical fill */
+}
+
+/* Individual card colors */
 .card1 {
   background-color: #d1dcdc;
 }
@@ -101,16 +118,25 @@
   color: white;
 }
 
-.card:last-child {
-  margin-bottom: 1rem; /* Extra space below last card */
-}
-
+/* Mobile responsiveness */
 @media screen and (max-width: 768px) {
   .bottomSection {
     flex-direction: column;
   }
 
+  .loanPartners {
+    display: none;
+  }
+
   .cards {
     flex-direction: column;
+  }
+
+  .topSection h1 {
+    font-size: 26px;
+  }
+
+  .topSection p {
+    font-size: 15px;
   }
 }

@@ -23,12 +23,18 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  height: 100%; 
   margin: auto;
   padding-bottom: 7px;
+}
+.imageBox{
+  position: relative;
+  bottom: -3px;
 }
 .imageBox img {
   max-width: 100%;
   height: auto;
+
 }
 
 .textBox {
@@ -40,7 +46,7 @@
   font-weight: 900;
   background: white;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 7px 10px;
   margin-bottom: 5px;
 }
 
@@ -48,6 +54,7 @@
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  
 }
 
 .online {
@@ -96,6 +103,13 @@
 }
 
 @media (max-width: 768px) {
+
+  .imageBox img {
+  display: none;
+  }
+}
+
+@media (max-width: 480px) {
   .sliderWrapper {
     height: 50vh;
   }
@@ -111,11 +125,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   .section1 .imageBox img {
-    height: 90px;
+    display: block;
+    height: 50vw;
     width: auto;
     object-fit: contain;
   }
@@ -140,12 +155,14 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   .section2 .imageBox img {
+    display: block;
     height: 90px;
     width: auto;
+      max-width: 450px;   
     object-fit: contain;
   }
 
@@ -170,14 +187,11 @@
   .description {
     display: none;
   }
-}
-
-@media (max-width: 480px) {
   .heading2 {
     flex-direction: column;
-    gap: 8px;
+    gap: 0px;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .heading1 h2,
@@ -185,4 +199,9 @@
   .courses {
     text-align: center;
   }
+  .online,
+  .courses {
+    margin-bottom: 0; 
+  }
+
 }
