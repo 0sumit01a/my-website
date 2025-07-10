@@ -1,4 +1,4 @@
-  import { defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -11,6 +11,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '')
       }
-    }
+    },
+    // ✅ for dev server routing fallback
+    historyApiFallback: true
+  },
+  build: {
+    outDir: 'dist' // optional, but keeps it clear
   }
 })
