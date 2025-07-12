@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
-const headers = API_KEY ? { "X-API-Key": API_KEY } : {};
+const headers = API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {};
 
 const fetchWithHeaders = async (endpoint) => {
   try {
@@ -22,19 +22,19 @@ const fetchWithHeaders = async (endpoint) => {
   }
 };
 
-// ✅ Get all universities
+//  Get all universities
 export const getUniversities = async () => {
   const data = await fetchWithHeaders("get_university.php");
   return data?.data || [];
 };
 
-// ✅ Get all categories (programs)
+//  Get all categories (programs)
 export const getCategories = async () => {
   const data = await fetchWithHeaders("get_category.php");
   return data?.data || [];
 };
 
-// ✅ Get only Under Graduate programs
+//  Get only Under Graduate programs
 export const getUGPrograms = async () => {
   const data = await getCategories();
   return data.filter((cat) =>
@@ -42,7 +42,7 @@ export const getUGPrograms = async () => {
   );
 };
 
-// ✅ Get only Post Graduate programs
+//  Get only Post Graduate programs
 export const getPGPrograms = async () => {
   const data = await getCategories();
   return data.filter((cat) =>
@@ -50,7 +50,7 @@ export const getPGPrograms = async () => {
   );
 };
 
-// ✅ Get only MBA-related programs
+//  Get only MBA-related programs
 export const getMBAPrograms = async () => {
   const data = await getCategories();
   return data.filter((cat) =>
@@ -58,13 +58,13 @@ export const getMBAPrograms = async () => {
   );
 };
 
-// ✅ Example: get university-category mapping (optional)
+//  Example: get university-category mapping (optional)
 export const getUniversityMap = async () => {
   const data = await fetchWithHeaders("get_university_map.php");
   return data?.data || [];
 };
 
-// ✅ Example: slider API (if used on homepage)
+//  Example: slider API (if used on homepage)
 export const getSliders = async () => {
   const data = await fetchWithHeaders("get_sliders.php");
   return data?.data || [];
