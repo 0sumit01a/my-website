@@ -8,7 +8,7 @@ import SixthContainer from "./SixthContainer";
 import SeventhContainer from "./SeventhContainer";
 import EighthContainer from "./EighthContainer";
 import NinthContainer from "./NinthContainer";
-import TenthWebStories from "./TenthWebStories";
+// import TenthWebStories from "./TenthWebStories";
 import ElevenQuestionContainer from "./ElevenQuestionContainer";
 // import TwelveContainer from "./TwelveContainer";
 // import Footer from './Footer'
@@ -25,7 +25,7 @@ const MainConatiner = () => {
             <SeventhContainer/>
             <EighthContainer/>
             <NinthContainer/>
-            <TenthWebStories/>
+            {/* <TenthWebStories/> */}
             <ElevenQuestionContainer/>
             {/* <TwelveContainer/>
             <Footer/> */}

@@ -108,7 +108,7 @@ const CompareUniversityPage = () => {
             <img
               src={
                 universities.find((u) => u.u_id === id)?.u_logo
-                  ? `http://b4l.640.mytemp.website/backend/${universities.find((u) => u.u_id === id).u_logo}`
+                  ? `https://edunexsys.com/backend/${universities.find((u) => u.u_id === id).u_logo}`
                   : defaultLogo
               }
               alt="University"

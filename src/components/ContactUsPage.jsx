@@ -4,7 +4,7 @@ import {
   getUniversities,
   getCategories,
   getUniversityMap,
-} from '../api/api.js'; 
+} from '../api/api.js';
 
 const ContactUsPage = () => {
   const [universities, setUniversities] = useState([]);
@@ -25,7 +25,6 @@ const ContactUsPage = () => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
-  // Fetch data
   useEffect(() => {
     const fetchData = async () => {
       const uni = await getUniversities();
@@ -64,19 +63,27 @@ const ContactUsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const selectedUniversityObj = universities.find(u => u.u_id === selectedUniversity);
+
     const payload = {
-      ...formData,
-      university: selectedUniversity,
-      program: selectedProgram,
+      contact_name: formData.name,
+      contact_email: formData.email,
+      contact_num: formData.phone,
+      contact_university: selectedUniversityObj?.u_name || '',
+      contact_course: selectedProgram,
+      contact_start_date: formData.start,
     };
 
     try {
-      // Example: Replace with your actual submit endpoint
-      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/submit_form.php`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+     const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/add-contact.php`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer samDixa@2511@eduX', 
+  },
+  body: JSON.stringify(payload),
+});
+
 
       if (response.ok) {
         setMessage('Your details have been submitted successfully!');
@@ -86,7 +93,8 @@ const ContactUsPage = () => {
         setSelectedProgram('');
         setPrograms([]);
       } else {
-        setMessage('Failed to submit form. Please try again.');
+        const resData = await response.json();
+        setMessage(resData.message || 'Failed to submit form.');
         setStatus('error');
       }
     } catch (error) {
@@ -99,7 +107,6 @@ const ContactUsPage = () => {
   };
 
   return (
-    
     <div className={styles.contactPage}>
       <div className={styles.navSpacer}></div>
       <div className={styles.topSection}>
@@ -181,7 +188,7 @@ const ContactUsPage = () => {
             >
               <option value="">Select program</option>
               {programs.map(prog => (
-                <option key={prog.catg_id} value={prog.catg_id}>{prog.catg_name}</option>
+                <option key={prog.catg_id} value={prog.catg_name}>{prog.catg_name}</option>
               ))}
             </select>
 
@@ -201,9 +208,7 @@ const ContactUsPage = () => {
           </form>
 
           {message && (
-            <p
-              className={status === 'success' ? styles.successMsg : styles.errorMsg}
-            >
+            <p className={status === 'success' ? styles.successMsg : styles.errorMsg}>
               {message}
             </p>
           )}

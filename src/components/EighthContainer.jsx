@@ -20,6 +20,7 @@ const EighthContainer = () => {
           will find the path to your academic and career success here!
         </p>
       </div>
+
       <div>
         <ul className={style.universityGrid}>
           {universities.map((university, index) => (
@@ -27,19 +28,27 @@ const EighthContainer = () => {
               key={index}
               className={style.universityCard}
               onClick={() =>
-                navigate(`/universities/${generateSlug(university.u_name, university.u_id)}`)
+                navigate(
+                  `/universities/${generateSlug(university.u_name, university.u_id)}`
+                )
               }
             >
               <img
                 src={
                   university.u_imege
-                    ? `http://b4l.640.mytemp.website/backend/${university.u_imege}`
-                    : "https://via.placeholder.com/300x200?text=No+Image"
+                    ? university.u_imege
+                    : "https://placehold.co/300x200?text=No+Image"
                 }
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://placehold.co/300x200?text=No+Image";
+                }}
                 alt={university.u_name}
                 className={style.universityImage}
               />
-              <span>{university.u_program?.split(",").length || 0} Courses</span>
+              <span>
+                {university.u_program?.split(",").filter(Boolean).length || 0} Courses
+              </span>
               <h4>{university.u_name}</h4>
             </li>
           ))}

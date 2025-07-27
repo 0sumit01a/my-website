@@ -1,129 +1,294 @@
-.navGap{
-     height: 100px; 
+/* Smoothing and base rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+.navGap {
+  height: 100px;
   width: 100%;
 }
+
 .wrapper {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fffef9;
 }
 
+/* Section Layouts */
 .section {
   padding: 4rem 2rem;
-  background-color: #557E7C;
-  height: 60vh;
 }
-.container{
-    padding: 1rem 4rem;
 
-}
-.container h1{
-    font-size: 4vw;
-}
-.container p{
-    margin-top: 1vw;
-}
-.container button{
-    margin-top: 1vw;
-}
 .section1 {
-  min-height: 60vh;
   background-color: #557E7C;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* .section2 {
-  min-height: 60vh;
-  margin-top: -2rem;
-  background-color: #fdf7e3;
-} */
+.heroContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
+.heroContainer h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.heroContainer .date {
+  font-style: italic;
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.readMore {
+  background-color: #ff5722;
+  border: none;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.readMore:hover {
+  background-color: #e64a19;
+}
+
+/* Main Blog + Sidebar */
 .section3 {
-  min-height: 100vh;
-  background-color: #fefae0; /* Light cream background */
+  background-color: #fefae0;
+  padding: 6rem 2rem 4rem;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 6rem 1rem;
-  line-height: 1.5;
+  position: relative;
+  z-index: 5;
 }
 
 .cardWrapper {
-  background-color: #fff;
-  min-height: 100vh;
+  background-color: #ffffff;
   max-width: 1200px;
   width: 100%;
   display: flex;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  gap: 2.5rem;
+  margin-top: -150px;
+  position: relative;
   box-sizing: border-box;
-  margin-top: -19vh;
 }
 
 .left {
-  width: 60%;
+  width: 65%;
   padding-right: 2rem;
-  border-right: 1px solid #ddd;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #222;
+  border-right: 1px solid #eee;
+}
+
+.left h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.blogContent p {
+  margin-bottom: 1.2rem;
+}
+
+.blogContent h2,
+.blogContent h3 {
+  margin-top: 2rem;
+  font-weight: 600;
 }
 
 .right {
-  width: 40%;
+  width: 35%;
   padding-left: 2rem;
 }
 
 .right h3 {
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tagsList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tagsList li {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.tagsList li a {
+  text-decoration: underline;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.tagsList li a:hover {
   color: #e85d04;
 }
 
-.right ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-
-.right ul li {
-  margin-bottom: 1rem;
-}
-
-.right ul li a {
-  text-decoration: underline;
-  color: #000;
-  font-weight: 500;
+/* Tags (if used) */
+.tags {
+  margin-top: 2rem;
+  text-align: left;
 }
 
 .tags span {
-  background-color: #e6e6e6;
+  background-color: #eee;
   padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  margin: 0.3rem;
+  border-radius: 999px;
+  margin: 0.3rem 0.4rem 0 0;
   display: inline-block;
   font-size: 0.85rem;
-}
-.date {
-  font-style: italic;
-  font-size: 0.9rem;
   color: #444;
 }
 
-.tags span {
-  background-color: #ccc;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  margin: 0.2rem;
-  display: inline-block;
-}
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
   .cardWrapper {
     flex-direction: column;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
   }
 
   .left,
   .right {
     width: 100%;
-    border-right: none;
     padding: 0;
+    border: none;
   }
 
   .right {
     margin-top: 2rem;
   }
+
+  .heroContainer h1 {
+    font-size: 1.8rem;
+  }
+
+  .readMore {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+.blogContainer {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background: #fffefc;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.blogMain {
+  flex: 3;
+}
+
+.blogCard {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+}
+
+.blogTitle {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #111;
+}
+
+.blogTitleIcon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.blogDate {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.blogExcerpt {
+  color: #333;
+  font-size: 1rem;
+  margin: 0.8rem 0 1.2rem;
+  line-height: 1.6;
+}
+
+.readMore {
+  display: inline-block;
+  background: #ff5722;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.readMore:hover {
+  background: #e64a19;
+}
+
+.sidebar {
+  flex: 1;
+  border-left: 2px solid #f0f0f0;
+  padding-left: 1.5rem;
+}
+
+.sidebar h3 {
+  color: #2e7d32;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.sidebar a {
+  text-decoration: underline;
+  color: #333;
+  font-size: 1rem;
+}
+
+.sidebar a:hover {
+  color: #ff5722;
 }

@@ -1,24 +1,34 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Applyform.module.css";
-import { getUniversities, getCategories, getUniversityMap } from "../api/api";
+import {
+  getUniversities,
+  getCategories,
+  getUniversityMap,
+} from "../api/api";
 
-const ApplyForm = ({ heading = "Choose the University", onClose, showClose = true }) => {
+const ApplyForm = ({
+  heading = "Choose the University",
+  onClose,
+  showClose = true,
+}) => {
   const [universities, setUniversities] = useState([]);
+  const [allPrograms, setAllPrograms] = useState([]);
+  const [universityMap, setUniversityMap] = useState([]);
   const [programs, setPrograms] = useState([]);
+
   const [selectedUniversity, setSelectedUniversity] = useState("");
-  const [filteredPrograms, setFilteredPrograms] = useState([]);
+  const [selectedProgram, setSelectedProgram] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     start: "",
-    university: "",
-    program: "",
     consent: true,
   });
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,34 +36,23 @@ const ApplyForm = ({ heading = "Choose the University", onClose, showClose = tru
       const cats = await getCategories();
       const maps = await getUniversityMap();
       setUniversities(unis);
-      setPrograms(cats);
-
-      // Save mapping data for filtering
-      setFilteredPrograms([]);
+      setAllPrograms(cats);
+      setUniversityMap(maps);
     };
-
     fetchData();
   }, []);
 
   useEffect(() => {
     if (selectedUniversity) {
-      // Filter programs based on university mapping
-      (async () => {
-        const maps = await getUniversityMap();
-        const universityObj = universities.find((u) => u.u_name === selectedUniversity);
-        if (universityObj) {
-          const uniId = universityObj.u_id;
-          const programIds = maps.filter((m) => m.u_id === uniId).map((m) => m.catg_id);
-          const filtered = programs.filter((p) => programIds.includes(p.catg_id));
-          setFilteredPrograms(filtered);
-        } else {
-          setFilteredPrograms([]);
-        }
-      })();
+      const mapped = universityMap.filter((item) => item.u_id === selectedUniversity);
+      const programIds = mapped.map((item) => item.catg_id);
+      const filteredPrograms = allPrograms.filter((p) => programIds.includes(p.catg_id));
+      setPrograms(filteredPrograms);
     } else {
-      setFilteredPrograms([]);
+      setPrograms([]);
     }
-  }, [selectedUniversity, universities, programs]);
+    setSelectedProgram("");
+  }, [selectedUniversity, universityMap, allPrograms]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -68,42 +67,65 @@ const ApplyForm = ({ heading = "Choose the University", onClose, showClose = tru
     setLoading(true);
     setMessage("");
 
+    const selectedUniversityObj = universities.find((u) => u.u_id === selectedUniversity);
+
+    const payload = {
+      contact_name: formData.name,
+      contact_email: formData.email,
+      contact_num: formData.phone,
+      contact_university: selectedUniversityObj?.u_name || "",
+      contact_course: selectedProgram,
+      contact_start_date: formData.start,
+    };
+
     try {
-      // ⚠️ Replace this URL with your actual backend submit URL
-      const response = await fetch("http://b4l.640.mytemp.website/backend/api/submit_form.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_API_URL}/add-contact.php`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": import.meta.env.VITE_REACT_APP_API_KEY,
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       const result = await response.json();
-      if (result.status === "success") {
+
+      if (response.ok) {
         setMessage("Form submitted successfully ✅");
+        setStatus("success");
         setFormData({
           name: "",
           phone: "",
           email: "",
           start: "",
-          university: "",
-          program: "",
           consent: true,
         });
         setSelectedUniversity("");
-        setFilteredPrograms([]);
+        setSelectedProgram("");
+        setPrograms([]);
       } else {
-        setMessage("Error: Something went wrong ❌");
+        setMessage(result.message || "Submission failed ❌");
+        setStatus("error");
       }
     } catch (error) {
       setMessage("Error: Could not submit form ❌");
+      setStatus("error");
     }
+
     setLoading(false);
+    setTimeout(() => setMessage(""), 4000);
   };
 
   return (
     <div className={styles.overlayOne}>
       <div className={styles.formWrapperOne}>
         {showClose && (
-          <button className={styles.closeBtnOne} onClick={onClose}>×</button>
+          <button className={styles.closeBtnOne} onClick={onClose}>
+            ×
+          </button>
         )}
 
         <h3 className={styles.heading}>{heading}</h3>
@@ -155,31 +177,31 @@ const ApplyForm = ({ heading = "Choose the University", onClose, showClose = tru
           </select>
 
           <select
-            name="university"
-            value={formData.university}
-            onChange={(e) => {
-              handleChange(e);
-              setSelectedUniversity(e.target.value);
-            }}
+            value={selectedUniversity}
+            onChange={(e) => setSelectedUniversity(e.target.value)}
             required
             className={styles.selectOne}
           >
             <option value="">Select university</option>
             {universities.map((u) => (
-              <option key={u.u_id} value={u.u_name}>{u.u_name}</option>
+              <option key={u.u_id} value={u.u_id}>
+                {u.u_name}
+              </option>
             ))}
           </select>
 
           <select
-            name="program"
-            value={formData.program}
-            onChange={handleChange}
+            value={selectedProgram}
+            onChange={(e) => setSelectedProgram(e.target.value)}
             required
+            disabled={!programs.length}
             className={styles.selectOne}
           >
             <option value="">Select program</option>
-            {filteredPrograms.map((p) => (
-              <option key={p.catg_id} value={p.catg_name}>{p.catg_name}</option>
+            {programs.map((p) => (
+              <option key={p.catg_id} value={p.catg_name}>
+                {p.catg_name}
+              </option>
             ))}
           </select>
 
@@ -191,7 +213,8 @@ const ApplyForm = ({ heading = "Choose the University", onClose, showClose = tru
               onChange={handleChange}
             />
             <label htmlFor="consent">
-              By submitting your contact details, you authorise MyOnlineCollege to contact you via email, text, WhatsApp or call even though you may be registered on DND.
+              By submitting your contact details, you authorise MyOnlineCollege to
+              contact you via email, text, WhatsApp or call even though you may be registered on DND.
             </label>
           </div>
 
@@ -199,7 +222,16 @@ const ApplyForm = ({ heading = "Choose the University", onClose, showClose = tru
             {loading ? "Submitting..." : "Submit"}
           </button>
 
-          {message && <p style={{ color: message.includes("successfully") ? "green" : "red", marginTop: "6px" }}>{message}</p>}
+          {message && (
+            <p
+              style={{
+                color: status === "success" ? "green" : "red",
+                marginTop: "6px",
+              }}
+            >
+              {message}
+            </p>
+          )}
         </form>
       </div>
     </div>

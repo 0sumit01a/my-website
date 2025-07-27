@@ -5,7 +5,9 @@ const headers = API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {};
 
 const fetchWithHeaders = async (endpoint) => {
   try {
-    const res = await fetch(`${BASE_URL}/${endpoint}`, { headers });
+    const res = await fetch(`${BASE_URL}/${endpoint}`, { headers,
+        mode: 'cors',  
+     });
 
     const contentType = res.headers.get("content-type") || "";
 

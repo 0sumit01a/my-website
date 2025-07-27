@@ -40,10 +40,7 @@ const Header = () => {
         <div className={`${style.headerInfo} ${menuOpen ? style.openMenu : ''}`}>
           <Link to="/compare" className={style.compare}>Compare</Link>
           <Link to="/top-universities" className={style.topuniversity}>Top Universities</Link>
-          <div className={style.aiVector}>
-            <img src={aiLogo} alt="AI Logo" />
-            Powered Course Finder
-          </div>
+          
           <Link to="/contact" className={style.contact}>Contact us</Link>
           {/* <div className={style.login} onClick={handleLoginClick}>Login</div> */}
         </div>

@@ -19,7 +19,7 @@ import TermConditions from "./components/TermConditions.jsx";
 import PrivacyPolicy from "./components/PricacyPolicy.jsx";
 import Blog from "./components/Blog.jsx";
 import Disclamer from "./components/Disclamer.jsx";
-
+import BlogDetails from "./components/BlogDetails.jsx";
 
 export default class App extends Component {
   render() {
@@ -37,11 +37,13 @@ export default class App extends Component {
               <Route path="/know-more" element={<KnowMorePage />} /> 
               <Route path="/universities" element={<AllUniversitiesPage />} />
               <Route path="/universities/:slug" element={<UniversityInfo />} />
-              <Route path="/web-stories" element={<WebStories />} />
+              {/* <Route path="/web-stories" element={<WebStories />} /> */}
               <Route path="/web-stories/:id" element={<StoryViewer />} />
               <Route path="/terms" element={<TermConditions />} />         
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/blog" element={<Blog />} />
+               <Route path="/blog/:idAndSlug" element={<BlogDetails/>} />
+              
               <Route path ="/disclaimer" element={<Disclamer />} />
                    <Route path="/:category/:programId" element={<ProgramPage />} /> 
             </Routes>
